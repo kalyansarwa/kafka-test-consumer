@@ -1,0 +1,20 @@
+spring:
+  profiles: development
+security.basic.enabled: false
+management.security.enabled: false
+
+---
+kafka: 
+  bootstrap.servers: 146.1.220.152:9092
+  zookeper.servers: 146.1.220.152:2181
+  group.id: test-consumer-group
+  enable.auto.commit: true
+  fetch.min.bytes: 50000
+  receive.buffer.bytes: 262144
+  max.partition.fetch.bytes: 2097152
+  serializer: org.apache.kafka.common.serialization.StringSerializer
+  deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  topic: kafkatest
+  ssl.enabled.protocols: TLSv1.2
+server:
+  port: 10998
